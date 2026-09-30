@@ -79,4 +79,39 @@ public class CursoRepository {
         cursos.add(curso);
         guardarLista(cursos);
     }
+
+
+
+    // Actualizar un curso existente buscando por su código
+    public boolean actualizar(Curso cursoActualizado) {
+        List<Curso> cursos = obtenerTodos();
+        boolean encontrado = false;
+
+        for (int i = 0; i < cursos.size(); i++) {
+            if (cursos.get(i).getCodigo().equalsIgnoreCase(cursoActualizado.getCodigo())) {
+                cursos.set(i, cursoActualizado);
+                encontrado = true;
+                break;
+            }
+        }
+
+        if (encontrado) {
+            guardarLista(cursos);
+        }
+        return encontrado;
+    }
+
+
+
+
+    // Eliminar un curso por su código
+    public boolean eliminar(String codigo) {
+        List<Curso> cursos = obtenerTodos();
+        boolean eliminado = cursos.removeIf(c -> c.getCodigo().equalsIgnoreCase(codigo));
+
+        if (eliminado) {
+            guardarLista(cursos);
+        }
+        return eliminado;
+    }
 }
