@@ -105,6 +105,11 @@ public class CursoUI {
         servicio.actualizarCurso(codigo, nombre, creditos);
     }
 
+    //Método que pedirá mediante I/O el código del curso a eliminar, este se comunica con el service y este usara el repository para modificar el json eliminadolo
     private void eliminar() {
+        System.out.println("\n--- ELIMINAR CURSO ---");
+        System.out.print("Ingrese el código del curso que desea eliminar: ");
+        String codigo = scanner.nextLine();
+        servicio.eliminarCurso(codigo);
     }
 }
