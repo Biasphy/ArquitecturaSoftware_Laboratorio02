@@ -71,7 +71,20 @@ public class CursoUI {
         servicio.registrarCurso(codigo, nombre, creditos);
     }
 
+    //Método que imprimirá todos los cursos que están dentro de la lista en RAM, estos previamente fueron traidos del Json por el service que se llama en este método
     private void listar() {
+        List<Curso> cursos = servicio.listarCursos();
+        System.out.println("\n--- LISTA DE CURSOS REGISTRADOS ---");
+        if (cursos.isEmpty()) {
+            System.out.println("No hay cursos registrados en el sistema.");
+        } else {
+            for (int i = 0; i < cursos.size(); i++) {
+                Curso c = cursos.get(i);
+                System.out.println((i + 1) + ". Código: " + c.getCodigo() +
+                        " | Nombre: " + c.getNombre() +
+                        " | Créditos: " + c.getCreditos());
+            }
+        }
     }
 
     private void actualizar() {
