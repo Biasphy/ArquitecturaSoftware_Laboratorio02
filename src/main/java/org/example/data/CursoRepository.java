@@ -56,4 +56,27 @@ public class CursoRepository {
             System.out.println("Error al guardar los cursos: " + e.getMessage());
         }
     }
+
+
+
+    // Obtener todos los cursos del JSON y lso guarda en RAM
+    public List<Curso> obtenerTodos() {
+        try (FileReader reader = new FileReader(RUTA_ARCHIVO)) {
+            Type listType = new TypeToken<ArrayList<Curso>>() {}.getType();
+            List<Curso> cursos = gson.fromJson(reader, listType);
+            return cursos != null ? cursos : new ArrayList<>();
+        } catch (IOException e) {
+            System.out.println("Error al leer los cursos: " + e.getMessage());
+            return new ArrayList<>();
+        }
+    }
+
+
+
+    // Insertar un nuevo curso a la lista en RAM y luego lo guarda en el Json.
+    public void insertar(Curso curso) {
+        List<Curso> cursos = obtenerTodos();
+        cursos.add(curso);
+        guardarLista(cursos);
+    }
 }
