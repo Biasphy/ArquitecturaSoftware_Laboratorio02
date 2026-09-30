@@ -1,12 +1,14 @@
 package org.example;
 
 import org.example.presentacion.EstudianteUI;
+import org.example.presentacion.CursoUI; //Implementación de la UI de Curso
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         EstudianteUI estudianteUI = new EstudianteUI();
+        CursoUI cursoUI = new CursoUI(); //Implementación de la UI de Curso
 
         int opcion;
         do {
@@ -27,7 +29,7 @@ public class Main {
 
             switch (opcion) {
                 case 1 -> estudianteUI.mostrarMenu();
-                case 2 -> System.out.println("\n[Aviso] WIP.");
+                case 2 -> cursoUI.mostrarMenu(); //Implementación de la UI de Curso
                 case 3 -> System.out.println("\nSaliendo del sistema, cerrando Skynet.");
                 default -> System.out.println("\nOpción inválida. Intente de nuevo.");
             }
