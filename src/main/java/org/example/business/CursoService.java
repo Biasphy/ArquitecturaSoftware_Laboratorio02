@@ -43,4 +43,27 @@ public class CursoService {
         System.out.println("¡Curso registrado exitosamente!");
         return true;
     }
+
+    // Actualizar un curso existente, para ello se necesita su código principalmente y los datos nombre y creditos, estos datos también se validan para luego actualizar el curso y debolver un booleano según haya sido exitoso o no.
+    public boolean actualizarCurso(String codigo, String nombre, int creditos) {
+        if (nombre == null || nombre.trim().isEmpty()) {
+            System.out.println("Error de validación: El nombre del curso no puede estar vacío.");
+            return false;
+        }
+
+        if (creditos <= 0) {
+            System.out.println("Error de validación: Los créditos deben ser mayores a cero.");
+            return false;
+        }
+
+        Curso cursoActualizado = new Curso(codigo, nombre, creditos);
+        boolean actualizado = repository.actualizar(cursoActualizado);
+
+        if (actualizado) {
+            System.out.println("Curso actualizado correctamente");
+        } else {
+            System.out.println("No se encontró un curso con el código " + codigo);
+        }
+        return actualizado;
+    }
 }
