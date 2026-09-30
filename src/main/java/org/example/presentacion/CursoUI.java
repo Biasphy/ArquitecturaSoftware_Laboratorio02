@@ -53,8 +53,22 @@ public class CursoUI {
 
 
 
-    //Métodos que deben implementarse
+    //Este método se conecta con el service mediante registrarCurso para lograr registrar un curso con datos pedidos mediante I/O
     private void registrar() {
+        System.out.println("\n--- REGISTRAR NUEVO CURSO ---");
+        System.out.print("Ingrese código del curso: ");
+        String codigo = scanner.nextLine();
+        System.out.print("Ingrese nombre del curso: ");
+        String nombre = scanner.nextLine();
+        System.out.print("Ingrese número de créditos: ");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Ingrese un número válido para los créditos:");
+            scanner.next();
+        }
+        int creditos = scanner.nextInt();
+        scanner.nextLine(); // Limpiar buffer
+
+        servicio.registrarCurso(codigo, nombre, creditos);
     }
 
     private void listar() {
