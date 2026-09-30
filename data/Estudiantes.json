@@ -1,0 +1,14 @@
+[
+  {
+    "codigo": "1",
+    "nombre": "Sideral",
+    "apellido": "Carrion",
+    "edad": 30
+  },
+  {
+    "codigo": "2",
+    "nombre": "Chupetin",
+    "apellido": "Trujillo",
+    "edad": 20
+  }
+]
