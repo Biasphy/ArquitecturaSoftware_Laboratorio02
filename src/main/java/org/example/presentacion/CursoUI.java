@@ -87,7 +87,22 @@ public class CursoUI {
         }
     }
 
+    //Método para actualizar los datos de un curso, usaremos I/O para pedir los datos a actualizar del curso(identificado por código), este también usa el service para usar Json y modificar los datos del curso elegido.
     private void actualizar() {
+        System.out.println("\n--- ACTUALIZAR CURSO ---");
+        System.out.print("Ingrese el código del curso que desea actualizar: ");
+        String codigo = scanner.nextLine();
+        System.out.print("Ingrese nuevo nombre: ");
+        String nombre = scanner.nextLine();
+        System.out.print("Ingrese nuevos créditos: ");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Ingrese un número válido para los créditos:");
+            scanner.next();
+        }
+        int creditos = scanner.nextInt();
+        scanner.nextLine(); // Limpiar buffer
+
+        servicio.actualizarCurso(codigo, nombre, creditos);
     }
 
     private void eliminar() {
