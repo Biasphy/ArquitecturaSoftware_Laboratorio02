@@ -66,4 +66,15 @@ public class CursoService {
         }
         return actualizado;
     }
+
+    // Eliminar un curso por código utilizando la interfaz de CursoRepository
+    public boolean eliminarCurso(String codigo) {
+        boolean eliminado = repository.eliminar(codigo);
+        if (eliminado) {
+            System.out.println("Curso eliminado correctamente");
+        } else {
+            System.out.println("No se encontró un curso con el código " + codigo);
+        }
+        return eliminado;
+    }
 }
