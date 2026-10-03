@@ -1,4 +1,4 @@
-package org.example.business;
+package com.academico.domain.model;
 
 public class Estudiante {
     private String codigo;

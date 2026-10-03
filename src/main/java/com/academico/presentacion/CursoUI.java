@@ -1,7 +1,7 @@
-package org.example.presentacion;
+package com.academico.presentacion;
 
-import org.example.business.Curso;
-import org.example.business.CursoService;
+import com.academico.domain.model.Curso;
+import com.academico.application.CursoService;
 
 import java.util.List;
 import java.util.Scanner;

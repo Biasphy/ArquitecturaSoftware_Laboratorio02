@@ -1,9 +1,9 @@
-package org.example.data;
+package com.academico.infrastructure;
 
+import com.academico.domain.model.Estudiante;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import org.example.business.Estudiante;
 
 import java.io.File;
 import java.io.FileReader;
@@ -13,11 +13,11 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EstudianteRepository {
+public class EstudianteRepositoryJson {
     private final String RUTA_ARCHIVO = "data/Estudiantes.json";
     private final Gson gson;
 
-    public EstudianteRepository() {
+    public EstudianteRepositoryJson() {
         //Gson con pretty printing para que el JSON sea legible en texto
         this.gson = new GsonBuilder().setPrettyPrinting().create();
         verificarYCrearArchivo();

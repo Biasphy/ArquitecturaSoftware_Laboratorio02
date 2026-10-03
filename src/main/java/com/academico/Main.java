@@ -1,7 +1,7 @@
-package org.example;
+package com.academico;
 
-import org.example.presentacion.EstudianteUI;
-import org.example.presentacion.CursoUI; //Implementación de la UI de Curso
+import com.academico.presentacion.EstudianteUI;
+import com.academico.presentacion.CursoUI; //Implementación de la UI de Curso
 import java.util.Scanner;
 
 public class Main {

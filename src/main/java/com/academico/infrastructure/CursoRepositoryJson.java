@@ -1,9 +1,9 @@
-package org.example.data;
+package com.academico.infrastructure;
 
+import com.academico.domain.model.Curso;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import org.example.business.Curso;
 
 import java.io.File;
 import java.io.FileReader;
@@ -13,7 +13,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CursoRepository {
+public class CursoRepositoryJson {
 
     //Atributos necesarios para la manipulación de Json mediante Gson como la ruta de json el objeto Gson.
     private final String RUTA_ARCHIVO = "data/cursos.json";
@@ -22,7 +22,7 @@ public class CursoRepository {
 
 
     // Formateando el Gson para que sea legible mediante su método pretty.
-    public CursoRepository() {
+    public CursoRepositoryJson() {
         this.gson = new GsonBuilder().setPrettyPrinting().create();
         verificarYCrearArchivo();
     }

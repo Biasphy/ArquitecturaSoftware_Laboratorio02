@@ -1,13 +1,14 @@
-package org.example.business;
+package com.academico.application;
 
-import org.example.data.CursoRepository;
+import com.academico.domain.model.Curso;
+import com.academico.infrastructure.CursoRepositoryJson;
 import java.util.List;
 
 public class CursoService {
-    private final CursoRepository repository;
+    private final CursoRepositoryJson repository;
 
     public CursoService() {
-        this.repository = new CursoRepository();
+        this.repository = new CursoRepositoryJson();
     }
 
 

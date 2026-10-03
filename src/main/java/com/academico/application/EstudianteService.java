@@ -1,13 +1,15 @@
-package org.example.business;
+package com.academico.application;
 
-import org.example.data.EstudianteRepository;
+import com.academico.domain.model.Estudiante;
+import com.academico.infrastructure.EstudianteRepositoryJson;
+
 import java.util.List;
 
 public class EstudianteService {
-    private final EstudianteRepository repository;
+    private final EstudianteRepositoryJson repository;
 
     public EstudianteService() {
-        this.repository = new EstudianteRepository();
+        this.repository = new EstudianteRepositoryJson();
     }
 
     // Obtener todos los estudiantes
